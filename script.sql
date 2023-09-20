@@ -176,3 +176,9 @@ left join alunos on notas.aluno_id = alunos.aluno_id
 where notas.nota < 60;
 
 
+-- 11 Qual é a média das notas dos alunos na disciplina com código "DW301" entre '2023-03-01' e '2023-03-31'?  --
+
+select avg (notas.nota) as media_notas
+from notas 
+inner join disciplinas on notas.disciplina_id = disciplinas.disciplina_id
+where disciplinas.codigo_disciplina = 'DW301'and data_avaliacao between '2023-03-01' and '2023-03-31';
